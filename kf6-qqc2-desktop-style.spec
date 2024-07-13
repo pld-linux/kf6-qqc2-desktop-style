@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.3
+%define		kdeframever	6.4
 %define		qtver		5.15.2
 %define		kfname		qqc2-desktop-style
 
 Summary:	QQC2StyleBridge
 Name:		kf6-%{kfname}
-Version:	6.3.0
+Version:	6.4.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	74d9861c332a6dfd5a60dde59cc72f89
+# Source0-md5:	af4dd35c418e9d89b54cd1abf7c13240
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Quick-devel >= %{qtver}
@@ -154,6 +154,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/qqc2desktopstyle/private/libqqc2desktopstyleplugin.so
 %{_libdir}/qt6/qml/org/kde/qqc2desktopstyle/private/qmldir
 %{_libdir}/qt6/qml/org/kde/qqc2desktopstyle/private/qqc2desktopstyleplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/desktop/SplitView.qml
 
 %files devel
 %defattr(644,root,root,755)
