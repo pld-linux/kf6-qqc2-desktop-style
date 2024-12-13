@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.8
+%define		kdeframever	6.9
 %define		qtver		5.15.2
 %define		kfname		qqc2-desktop-style
 
 Summary:	QQC2StyleBridge
 Name:		kf6-%{kfname}
-Version:	6.8.0
+Version:	6.9.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	41c45c5298e49c15471d36dc3158b6db
+# Source0-md5:	4e69194596a3b482b46b828f833e0b1a
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Quick-devel >= %{qtver}
@@ -73,10 +73,12 @@ Pliki nagłówkowe dla programistów używających %{kfname}.
 rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
 
+%find_lang %{kfname} --all-name --with-qm
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{kfname}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kirigami/platform/org.kde.desktop.so
 %dir %{_libdir}/qt6/qml/org/kde/desktop
@@ -155,6 +157,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/qqc2desktopstyle/private/qmldir
 %{_libdir}/qt6/qml/org/kde/qqc2desktopstyle/private/qqc2desktopstyleplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/desktop/SplitView.qml
+%{_libdir}/qt6/qml/org/kde/desktop/SwipeDelegate.qml
 
 %files devel
 %defattr(644,root,root,755)
