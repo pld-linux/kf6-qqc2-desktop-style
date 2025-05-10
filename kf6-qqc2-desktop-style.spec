@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.13
+%define		kdeframever	6.14
 %define		qtver		5.15.2
 %define		kfname		qqc2-desktop-style
 
 Summary:	QQC2StyleBridge
 Name:		kf6-%{kfname}
-Version:	6.13.0
+Version:	6.14.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	6ea9727a9a2968f03da3e5e3d549eed3
+# Source0-md5:	6d7743494d896980884e2c1e8d1d1ebf
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Quick-devel >= %{qtver}
