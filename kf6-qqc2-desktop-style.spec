@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.18
+%define		kdeframever	6.19
 %define		qtver		5.15.2
 %define		kfname		qqc2-desktop-style
 
 Summary:	QQC2StyleBridge
 Name:		kf6-%{kfname}
-Version:	6.18.0
+Version:	6.19.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	606fdbca0d7ebbe8512c3b78be0b6840
+# Source0-md5:	18f7217ad7b997288c0859b8d5114ccd
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Quick-devel >= %{qtver}
@@ -81,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kfname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kirigami/platform/org.kde.desktop.so
+%{_libdir}/qt6/plugins/kf6/kirigami/platform/org.kde.desktop.so
 %dir %{_libdir}/qt6/qml/org/kde/desktop
 %{_libdir}/qt6/qml/org/kde/desktop/BusyIndicator.qml
 %{_libdir}/qt6/qml/org/kde/desktop/Button.qml
@@ -147,14 +147,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/desktop/private/SwitchIndicator.qml
 %{_libdir}/qt6/qml/org/kde/desktop/private/TextFieldContextMenu.qml
 %{_libdir}/qt6/qml/org/kde/desktop/private/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/desktop/private/liborg_kde_desktop_private.so
+%{_libdir}/qt6/qml/org/kde/desktop/private/liborg_kde_desktop_private.so
 %{_libdir}/qt6/qml/org/kde/desktop/private/org_kde_desktop_private.qmltypes
 %{_libdir}/qt6/qml/org/kde/desktop/private/qmldir
 %{_libdir}/qt6/qml/org/kde/desktop/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/qqc2desktopstyle
 %dir %{_libdir}/qt6/qml/org/kde/qqc2desktopstyle/private
 %{_libdir}/qt6/qml/org/kde/qqc2desktopstyle/private/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/qqc2desktopstyle/private/libqqc2desktopstyleplugin.so
+%{_libdir}/qt6/qml/org/kde/qqc2desktopstyle/private/libqqc2desktopstyleplugin.so
 %{_libdir}/qt6/qml/org/kde/qqc2desktopstyle/private/qmldir
 %{_libdir}/qt6/qml/org/kde/qqc2desktopstyle/private/qqc2desktopstyleplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/desktop/SplitView.qml
