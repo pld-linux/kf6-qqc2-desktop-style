@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# build with tests
 %define		kdeframever	6.19
-%define		qtver		5.15.2
+%define		qtver		6.7.0
 %define		kfname		qqc2-desktop-style
 
 Summary:	QQC2StyleBridge
@@ -15,18 +15,23 @@ Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{v
 # Source0-md5:	18f7217ad7b997288c0859b8d5114ccd
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6DBus-devel >= %{qtver}
+BuildRequires:	Qt6Gui-devel >= %{qtver}
 BuildRequires:	Qt6Quick-devel >= %{qtver}
-BuildRequires:	Qt6Test-devel >= %{qtver}
+%{?with_tests:BuildRequires:	Qt6Test-devel >= %{qtver}}
 BuildRequires:	Qt6Widgets-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16
 BuildRequires:	kf6-extra-cmake-modules >= %{version}
-BuildRequires:	kf6-kconfig-devel >= %{version}
-BuildRequires:	kf6-kirigami-devel >= %{version}
+BuildRequires:	kf6-kconfig-devel >= %{kdeframever}
+BuildRequires:	kf6-kcolorscheme-devel >= %{kdeframever}
+BuildRequires:	kf6-kiconthemes-devel >= %{kdeframever}
+BuildRequires:	kf6-kirigami-devel >= %{kdeframever}
 BuildRequires:	ninja
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
-BuildRequires:	zlib-devel
 Requires:	kf6-dirs
 #Obsoletes:	kf5-%{kfname} < %{version}
 %requires_eq_to Qt6Core Qt6Core-devel
