@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.22
+%define		kdeframever	6.23
 %define		qtver		6.7.0
 %define		kfname		qqc2-desktop-style
 
 Summary:	QQC2StyleBridge
 Name:		kf6-%{kfname}
-Version:	6.22.0
-Release:	2
+Version:	6.23.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	4022780d68f994c9544bf7867f1a74bb
+# Source0-md5:	e038915d3aabd6cb4152a75de45c9a68
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel >= %{qtver}
@@ -22,8 +22,8 @@ BuildRequires:	Qt6Quick-devel >= %{qtver}
 BuildRequires:	Qt6Widgets-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16
 BuildRequires:	kf6-extra-cmake-modules >= %{version}
-BuildRequires:	kf6-kconfig-devel >= %{kdeframever}
 BuildRequires:	kf6-kcolorscheme-devel >= %{kdeframever}
+BuildRequires:	kf6-kconfig-devel >= %{kdeframever}
 BuildRequires:	kf6-kiconthemes-devel >= %{kdeframever}
 BuildRequires:	kf6-kirigami-devel >= %{kdeframever}
 BuildRequires:	ninja
@@ -121,6 +121,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/desktop/RoundButton.qml
 %{_libdir}/qt6/qml/org/kde/desktop/ScrollBar.qml
 %{_libdir}/qt6/qml/org/kde/desktop/ScrollView.qml
+%{_libdir}/qt6/qml/org/kde/desktop/SearchField.qml
 %{_libdir}/qt6/qml/org/kde/desktop/Slider.qml
 %{_libdir}/qt6/qml/org/kde/desktop/SpinBox.qml
 %{_libdir}/qt6/qml/org/kde/desktop/StackView.qml
