@@ -41,10 +41,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is a style for QtQuickControls 2 that uses QWidget's QStyle for
-painting, making possible to achieve an higher deree of consistency
+painting, making possible to achieve an higher degree of consistency
 between QWidget-based and QML-based apps. NOTE: the application must
 be a QApplication rather than a QGuiApplication instance in order for
 this style to be used
+
+%description -l pl.UTF-8
+To jest styl dla QtQuickControls 2, który używa QStyle'u QtWidget do
+rysowania, pozwalając osiągnąć wyższy stopień zgodności między
+widżetami bazującymi na QWidget a aplikacjami opartymi na QML-u.
+Wiedz, że aplikacje mają być raczej wywiedzione z QApplication niż być
+instancjami QGuiApplication, żeby ten styl mógł zostać użyty.
 
 %package devel
 Summary:	Header files for %{kfname} development
